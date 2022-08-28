@@ -1,0 +1,115 @@
+.Weather {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+body {
+  background: linear-gradient(
+    179.4deg,
+    rgb(253, 240, 233) 2.2%,
+    rgb(255, 194, 203) 96.2%
+  );
+
+  font-family: Lato;
+}
+h1 {
+  color: #ec6f4c;
+  text-align: center;
+  margin: 20px 40px;
+  background-color: white;
+  border-radius: 10px;
+  line-height: 80px;
+  font-weight: 600;
+}
+
+.entry {
+  border-radius: 10px;
+  border-width: 1px;
+  border-color: #ec6f4c;
+  border-style: solid;
+  padding: 10px;
+}
+
+.search {
+  border-radius: 10px;
+  border-width: 1px;
+  border-color: #ec6f4c;
+  border-style: solid;
+  padding: 6px;
+}
+
+form {
+  text-align: center;
+  font-size: larger;
+}
+
+/* here is styling for the current location button: 
+  button {
+    font-size: normal;
+    border-radius: 5px;
+  }*/
+.card {
+  border-radius: 10px;
+  border-style: none;
+  text-align: center;
+}
+.card-header {
+  font-size: large;
+  font-weight: bold;
+}
+
+.col-4 {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.city {
+  font-size: xx-large;
+  font-weight: 700;
+}
+.temp {
+  font-size: xx-large;
+}
+.units {
+  font-size: medium;
+  position: relative;
+  bottom: 10px;
+  text-decoration: none;
+}
+
+.temp .active {
+  color: black;
+  cursor: default;
+  font-size: large;
+}
+
+.temp .active:hover {
+  text-decoration: none;
+}
+
+.hour {
+  text-align: center;
+  font-size: x-large;
+}
+
+ul {
+  list-style: none;
+}
+li:first-letter {
+  text-transform: capitalize;
+}
+
+#descriptionElement {
+  font-weight: bold;
+}
+
+.forecast-temp-min {
+  color: gray;
+}
+
+.forecast-date {
+  color: gray;
+}
+
+footer {
+  margin: 40px;
+}
