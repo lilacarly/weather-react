@@ -26,12 +26,12 @@ export default function Weather() {
                 </p>
                 <p className="card-text temp">
                   <span id="theTemp">85</span>
-                  <a href="#" className="units active" id="fahrenheit">
+                  <button className="units active" id="fahrenheit">
                     ˚F
-                  </a>
-                  <a href="#" className="units" id="celsius">
+                  </button>
+                  <button className="units" id="fahrenheit">
                     ˚C
-                  </a>
+                  </button>
                 </p>
               </div>
               <img src="" alt="Clear" id="emoji" className="col-4" />
