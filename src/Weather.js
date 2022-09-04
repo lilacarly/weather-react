@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./styles.css";
 import axios from "axios";
-export default function Weather() {
+import WeatherInfo from "./WeatherInfo";
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
-    console.log(response.data.main.temp);
-
     setWeatherData({
       ready: true,
       temperature: Math.round(response.data.main.temp),
@@ -17,21 +17,34 @@ export default function Weather() {
     });
   }
 
+  function search() {
+    let apiKey = "79556a453ffc6ed66cacb6d61dc994cc";
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search(city);
+  }
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
         <div className="container">
-          <h1>🌦 What's the weather?</h1>
-          <br />
-          <form id="search-form">
+          <form onSubmit={handleSubmit} id="search-form">
             <input
               type="text"
               placeholder="Enter city name here..."
               className="entry"
               id="cityEntry"
+              onChange={handleCityChange}
             />
             <input type="submit" value="Search" className="search" />
           </form>
+          <WeatherInfo data={weatherData} />
           <br />
           <div className="card">
             <div className="card-header" id="todayDate"></div>
@@ -82,18 +95,11 @@ export default function Weather() {
 
             <script src="script.js"></script>
           </div>
-          <footer>
-            By Lila Graham,{" "}
-            <a href="https://github.com/lilacarly/weather-react">GitHub</a>
-          </footer>
         </div>
       </div>
     );
   } else {
-    let apiKey = "79556a453ffc6ed66cacb6d61dc994cc";
-    let city = "Boston";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-    axios.get(apiUrl).then(handleResponse);
+    search();
     return "Loading...";
   }
 }

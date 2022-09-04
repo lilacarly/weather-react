@@ -5,7 +5,13 @@ import Weather from "./Weather";
 function App() {
   return (
     <div className="App">
-      <Weather />
+      <h1>🌦 What's the weather?</h1>
+      <br />
+      <Weather defaultCity="Boston" />
+      <footer>
+        By Lila Graham,{" "}
+        <a href="https://github.com/lilacarly/weather-react">GitHub</a>
+      </footer>
     </div>
   );
 }
