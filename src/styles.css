@@ -5,6 +5,12 @@
   --background-color: rgb(241, 228, 205);
 }
 
+.WeatherForecast {
+  color: var(--primary-color);
+  font-family: var(--secondary-font);
+  margin-top: 20px;
+}
+
 .Weather {
   text-align: center;
 }
@@ -48,7 +54,7 @@ h1 {
 form {
   text-align: center;
   font-size: larger;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .col-4 {
